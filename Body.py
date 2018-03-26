@@ -18,7 +18,7 @@ class Body(object):
 
         self.prevAcc = self.acc
 
-
+    #reads in initial info for a body
     def readInfo(self, filename):
         filein = open(filename, "r")
         lines = filein.readlines()

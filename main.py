@@ -1,3 +1,6 @@
+'''
+runs the required experiment
+'''
 from Experiment import Experiment
 
 def main():

@@ -1,3 +1,6 @@
+'''
+class that initialises Bodies and Systems and calls System methods to do useful things
+'''
 from Body import Body
 from Satelite import Satelite
 from AnimatedSystem import AnimatedSystem
@@ -28,9 +31,6 @@ class Experiment(object):
                 self.animateEveryNth = int(data)
         self.numIter = int(round(self.timeInterval/self.delta_t))
         filein.close()
-
-
-
 
 
     def innerSystem(self, filename):
@@ -68,14 +68,15 @@ class Experiment(object):
         earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
         mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
         jupiter = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/jupiter')
+        satelite = Satelite('experiments/innerSolarSystem/infoFiles/bodyInfo/earth', 'experiments/innerSolarSystem/infoFiles/bodyInfo/jupiterSatelite')
 
-        systemOfBodies = [sun, mercury, venus, earth, mars, jupiter]
+        systemOfBodies = [sun, mercury, venus, earth, mars, jupiter, satelite]
         system = AnimatedSystem(systemOfBodies, self.delta_t)
 
         system.iterateTimeInterval(self.timeInterval)
 
         print(system.averageAngVel(5))
-        system.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.timeInterval)
+        system.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
 
 
     def sateliteToMars(self, filename):
