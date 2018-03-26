@@ -1,0 +1,11 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+Name: Sun
+Mass: 1.988544E+30
+Initial Position: 0., 0., 0.
+Initial Velocity: 0., 0., 0.
+Radius: 1.2E+10
+Colour: y

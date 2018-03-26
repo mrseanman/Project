@@ -1,0 +1,11 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+Name: Venus
+Mass: 4.8658E+24
+Initial Position: 1.084816535546166E+11,  2.140480642359657E+09, -6.230727197343713E+09
+Initial Velocity: -8.395419768429807E+02,  3.485398988753671E+04,  5.265548194306877E+02
+Radius: 4.E+9
+Colour: m

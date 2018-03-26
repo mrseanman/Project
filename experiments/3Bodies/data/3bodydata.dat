@@ -1,0 +1,294 @@
+======================
+Time: 0.0 
+----
+BodyA:
+Position: [ 0.  0.  0.]
+Total Energy: -1.07914519065e+12
+
+BodyB:
+Position: [ 2.  3.  0.]
+Total Energy: -1.0994633014e+12
+
+BodyC:
+Position: [ 5.  1.  0.]
+Total Energy: -1.23850614865e+12
+======================
+Time: 0.1 
+----
+BodyA:
+Position: [ 0.10548374  0.00398709  0.        ]
+Total Energy: -1.11434157576e+12
+
+BodyB:
+Position: [ 1.90285212  2.89214051  0.        ]
+Total Energy: -1.12656553453e+12
+
+BodyC:
+Position: [ 4.89434719  1.00162068  0.        ]
+Total Energy: -1.24717445862e+12
+======================
+Time: 0.2 
+----
+BodyA:
+Position: [ 0.22264848  0.01681475  0.        ]
+Total Energy: -1.1577227686e+12
+
+BodyB:
+Position: [ 1.8116339   2.76755248  0.        ]
+Total Energy: -1.160857981e+12
+
+BodyC:
+Position: [ 4.77673732  1.00643203  0.        ]
+Total Energy: -1.26131318548e+12
+======================
+Time: 0.3 
+----
+BodyA:
+Position: [ 0.35259874  0.03995706  0.        ]
+Total Energy: -1.21168805754e+12
+
+BodyB:
+Position: [ 1.72668115  2.62459867  0.        ]
+Total Energy: -1.20419457991e+12
+
+BodyC:
+Position: [ 4.64616949  1.01430138  0.        ]
+Total Energy: -1.28174932618e+12
+======================
+Time: 0.4 
+----
+BodyA:
+Position: [ 0.49678888  0.07544658  0.        ]
+Total Energy: -1.28104240142e+12
+
+BodyB:
+Position: [ 1.64845731  2.46098063  0.        ]
+Total Energy: -1.26018798565e+12
+
+BodyC:
+Position: [ 4.50131353  1.02506944  0.        ]
+Total Energy: -1.31031604139e+12
+======================
+Time: 0.5 
+----
+BodyA:
+Position: [ 0.65719235  0.12624394  0.        ]
+Total Energy: -1.37435922408e+12
+
+BodyB:
+Position: [ 1.5775806  2.2733317  0.       ]
+Total Energy: -1.33507347907e+12
+
+BodyC:
+Position: [ 4.34037063  1.03851499  0.        ]
+Total Energy: -1.34993258799e+12
+======================
+Time: 0.6 
+----
+BodyA:
+Position: [ 0.83659784  0.19701031  0.        ]
+Total Energy: -1.50893370399e+12
+
+BodyB:
+Position: [ 1.51485757  2.05635561  0.        ]
+Total Energy: -1.44084473252e+12
+
+BodyC:
+Position: [ 4.16083759  1.05428731  0.        ]
+Total Energy: -1.40549861832e+12
+======================
+Time: 0.7 
+----
+BodyA:
+Position: [ 1.03916008  0.29602404  0.        ]
+Total Energy: -1.72719998927e+12
+
+BodyB:
+Position: [ 1.46132751  1.80064391  0.        ]
+Total Energy: -1.60507202704e+12
+
+BodyC:
+Position: [ 3.95907869  1.07176479  0.        ]
+Total Energy: -1.48593919282e+12
+======================
+Time: 0.8 
+----
+BodyA:
+Position: [ 1.27137344  0.44156558  0.        ]
+Total Energy: -2.18032081177e+12
+
+BodyB:
+Position: [ 1.41852188  1.48515499  0.        ]
+Total Energy: -1.91739957039e+12
+
+BodyC:
+Position: [ 3.72946448  1.08972804  0.        ]
+Total Energy: -1.60978356918e+12
+======================
+Time: 0.9 
+----
+BodyA:
+Position: [ 1.53644501  0.70601616  0.        ]
+Total Energy: -4.64825644988e+12
+
+BodyB:
+Position: [ 1.39912968  1.02278838  0.        ]
+Total Energy: -3.22608126691e+12
+
+BodyC:
+Position: [ 3.46233075  1.10553336  0.        ]
+Total Energy: -1.82413147736e+12
+======================
+Time: 1.0 
+----
+BodyA:
+Position: [ 1.28687366  0.90985833  0.        ]
+Total Energy: -3.27959913883e+12
+
+BodyB:
+Position: [ 2.13064749  0.65166514  0.        ]
+Total Energy: 542660019908.0
+
+BodyC:
+Position: [ 3.13806493  1.11298903  0.        ]
+Total Energy: -2.3528571996e+12
+======================
+Time: 1.1 
+----
+BodyA:
+Position: [ 1.08745695  0.85895427  0.        ]
+Total Energy: -2.79902320232e+12
+
+BodyB:
+Position: [ 2.99969661  0.76812854  0.        ]
+Total Energy: -759206057970.0
+
+BodyC:
+Position: [ 2.69780265  1.02530541  0.        ]
+Total Energy: -4.82717263318e+12
+======================
+Time: 1.2 
+----
+BodyA:
+Position: [ 0.98707316  0.81001562  0.        ]
+Total Energy: -3.07220048494e+12
+
+BodyB:
+Position: [ 3.57312221  1.31688421  0.        ]
+Total Energy: 1.0468962341e+12
+
+BodyC:
+Position: [ 2.35572218  0.68678616  0.        ]
+Total Energy: -1.64214412925e+12
+======================
+Time: 1.3 
+----
+BodyA:
+Position: [ 0.99419968  0.75369898  0.        ]
+Total Energy: -3.50146373208e+12
+
+BodyB:
+Position: [ 3.99630373  1.83049368  0.        ]
+Total Energy: 1.40274903894e+12
+
+BodyC:
+Position: [ 2.02175577  0.37393516  0.        ]
+Total Energy: -1.18671037807e+12
+======================
+Time: 1.4 
+----
+BodyA:
+Position: [ 1.15092259  0.64002439  0.        ]
+Total Energy: -4.27061068837e+12
+
+BodyB:
+Position: [ 4.38097596  2.32138128  0.        ]
+Total Energy: 1.53551903015e+12
+
+BodyC:
+Position: [ 1.60068582  0.11610836  0.        ]
+Total Energy: -1.85653254727e+12
+======================
+Time: 1.5 
+----
+BodyA:
+Position: [ 1.43398742  0.14101739  0.        ]
+Total Energy: -2.54838269412e+12
+
+BodyB:
+Position: [ 4.7456009   2.79884964  0.        ]
+Total Energy: 1.60251169036e+12
+
+BodyC:
+Position: [ 1.09885483  0.1476125   0.        ]
+Total Energy: -8.23400576853e+12
+======================
+Time: 1.6 
+----
+BodyA:
+Position: [ 1.05481521 -0.53239326  0.        ]
+Total Energy: -75364217181.4
+
+BodyB:
+Position: [ 5.09751686  3.26681722  0.        ]
+Total Energy: 1.65170813561e+12
+
+BodyC:
+Position: [ 1.08829839  0.31204668  0.        ]
+Total Energy: -4.40276064726e+12
+======================
+Time: 1.7 
+----
+BodyA:
+Position: [ 0.60510965 -0.91870957  0.        ]
+Total Energy: -95456545587.6
+
+BodyB:
+Position: [ 5.44065096  3.72771209  0.        ]
+Total Energy: 1.68110628877e+12
+
+BodyC:
+Position: [ 1.13435201  0.27076156  0.        ]
+Total Energy: -2.89942841155e+12
+======================
+Time: 1.8 
+----
+BodyA:
+Position: [ 0.1966971  -1.20157125  0.        ]
+Total Energy: -202659827155.0
+
+BodyB:
+Position: [ 5.77724039  4.18304395  0.        ]
+Total Energy: 1.70359705104e+12
+
+BodyC:
+Position: [ 1.15400574  0.15708441  0.        ]
+Total Energy: -2.17239889541e+12
+======================
+Time: 1.9 
+----
+BodyA:
+Position: [-0.17420204 -1.42977647  0.        ]
+Total Energy: -306511074159.0
+
+BodyB:
+Position: [ 6.10878286  4.63385004  0.        ]
+Total Energy: 1.72217632513e+12
+
+BodyC:
+Position: [ 1.14915753  0.00607701  0.        ]
+Total Energy: -1.72003549702e+12
+======================
+Time: 2.0 
+----
+BodyA:
+Position: [-0.51312658 -1.6227949   0.        ]
+Total Energy: -401202173141.0
+
+BodyB:
+Position: [ 6.43633898  5.08090745  0.        ]
+Total Energy: 1.73793326306e+12
+
+BodyC:
+Position: [ 1.12324309 -0.1684811   0.        ]
+Total Energy: -1.40069718128e+12

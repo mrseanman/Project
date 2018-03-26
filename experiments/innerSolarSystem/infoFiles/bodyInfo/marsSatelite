@@ -1,0 +1,13 @@
+#satelite that should get close to mars
+#needs to start very close to earth (7km away from centre)
+#
+#make delta_t 100
+#
+Name: Satelite
+Mass: 1000.
+Distance From Earth: 40000000.
+Theta angle From Earth: 5.367
+Phi angle From Earth: 0.9488
+Initial Speed From Earth: 6750.
+Radius: 1.5E+9
+Colour: y

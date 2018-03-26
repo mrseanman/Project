@@ -1,0 +1,14 @@
+#Data must be in this order
+#name[str], mass[float], initial position[3x1 array], initial velocity[3x1 array]
+#Radius[float](for animation), Colour(for animation)
+#for arrays dont do any brackets!
+#split is ": "
+#all in S.I units
+#
+#
+Name: Mars
+Mass: 1E13
+Initial Position: 0. , 0. , 0.
+Initial Velocity: 0. , 0. , 0.
+Radius: 1.
+Colour: r

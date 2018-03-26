@@ -1,0 +1,15 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+#
+#DONT
+#EDIT
+#
+Name: Earth
+Mass: 5.97219E+24
+Initial Position: -1.342504199126007E+11,  6.239036630428424E+10, -1.728068886943161E+06
+Initial Velocity: -1.302688661781405E+04, -2.712807668235767E+04,  5.912489758745920E-01
+Radius: 5.E+9
+Colour: b

@@ -1,0 +1,11 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+Name: Mercury
+Mass: 3.302E+23
+Initial Position: 5.349210442940116E+10, -3.873525798646213E+09, -5.223853239176501E+09
+Initial Velocity: -5.896413761736597E+03,  5.076602173625788E+04,  4.689184548422499E+03
+Radius: 3.E+9
+Colour: g

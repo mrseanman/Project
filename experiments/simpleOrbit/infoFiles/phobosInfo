@@ -1,0 +1,14 @@
+#Data must be in this order
+#name[str], mass[float], initial position[3x1 array], initial velocity[3x1 array]
+#Radius[float](for animation), Colour(for animation)
+#for arrays dont do any brackets!
+#split is ": "
+#all in S.I units
+#for circ orbit initial vel = 0. , 9.794366, 0.
+#
+Name: Phobos
+Mass: 1E5
+Initial Position: 7. , 0. , 0.
+Initial Velocity: 0. , 9.794366, 0.
+Radius: 0.3
+Colour: g

@@ -1,0 +1,14 @@
+#Data must be in this order
+#name[str], mass[float], initial position[3x1 array], initial velocity[3x1 array]
+#Radius[float](for animation), Colour(for animation)
+#for arrays dont do any brackets!
+#split is ": "
+#all in S.I units
+#
+#
+Name: BodyC
+Mass: 2.6E11
+Initial Position: 5. , 1. , 0.
+Initial Velocity: -0.8. , 0. , 0.
+Radius: 0.5
+Colour: c

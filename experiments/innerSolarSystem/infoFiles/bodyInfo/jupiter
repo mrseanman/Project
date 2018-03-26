@@ -1,0 +1,14 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+#
+#
+#
+Name: Jupiter
+Mass: 1.89813E+27
+Initial Position: -5.986984921339732E+11, -5.473424145979209E+11,  1.566957380146322E+10
+Initial Velocity: 8.666239166200771E+03, -9.036496262250312E+03, -1.564135218819578E02
+Radius: 9E+09
+Colour: k

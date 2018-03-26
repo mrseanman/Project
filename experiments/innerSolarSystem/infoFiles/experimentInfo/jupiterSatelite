@@ -1,0 +1,6 @@
+#
+#
+Delta_t: 3000.
+timeInterval: 5.E08
+animationTimeStep: 1000.
+animateEveryNth: 30

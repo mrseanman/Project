@@ -1,0 +1,11 @@
+#https://ssd.jpl.nasa.gov/horizons.cgi#top
+#2458173.500000000, A.D. 2018-Feb-24 00:00:00.0000,
+#All SI Units
+#Centre of Sun as coordinate origin
+#ecliptic and mean equinox as XY plane
+Name: Mars
+Mass: 6.4185E+23
+Initial Position: -1.829314487541109E+11, -1.490203710595926E+11,  1.366820709222719E+09
+Initial Velocity: 1.621168953356634E+04, -1.671368141663148E+04, -7.480693221335351E+02
+Radius: 4.E+9
+Colour: r
