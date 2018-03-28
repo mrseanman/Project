@@ -87,7 +87,34 @@ class System(object):
         numIter = int(round((float(timeInterval)/self.delta_t)))
         self.iterateSystemMany(numIter)
 
+    #calculates min and max of system total energy to learn about energy conservation
+    #i.e. energy should be constant
+    def mimMaxSystemEnergy(self):
+        minEnergy = self.energyOfState(self.pastSysStates[0])
+        maxEnergy = minEnergy
+
+        for i in range (1, len(self.pastSysStates)):
+            stateEnergy = self.energyOfState(self.pastSysStates[i])
+            if stateEnergy > maxEnergy:
+                maxEnergy = stateEnergy
+            if stateEnergy < minEnergy:
+                minEnergy = stateEnergy
+            return minEnergy, maxEnergy
+
+    #returns energy of a specific system of bodies
+    def energyOfState(self, systemOfBodies):
+        runningTotalE = 0.
+        for body in systemOfBodies:
+            KE = (0.5 * body.mass * (np.linalg.norm(body.vel))**2.)
+            PE = body.pot
+            #factor of 1/2 for double counting of potential
+            runningTotalE += KE + 0.5*PE
+
+        return runningTotalE
+
+
     #returns the average angular velocity of a body about the origin
+    #useful for calculating orbital period
     def averageAngVel(self, bodyNum):
         runningSum = 0.
         for state in self.pastSysStates:
@@ -116,6 +143,8 @@ class System(object):
                 closestAprproachTime = self.pastTimes[i]
 
         return minDisplacement, closestAprproachTime
+
+
 
     #pretty prints past parameters of the system in system.pastSysStates[iterationsOfInterest[i]]
     #bodiesOfInterest is what bodies we want to get info on (-1 corresponds to whole system)

@@ -55,10 +55,36 @@ class Experiment(object):
         #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/data/innerBodyData1.dat', 0, timeInterval, delta_t, [0,1,2,3,4], [0,1,6,7,8])
         #innerSystem.animateTimeInterval(0., timeInterval, timewarp, jumpFrames)
 
-        innerSystem.animateEveryNth(self.animateEveryNth, self.animationTimeStep)
+        innerSystem.animateEveryNth(self.animateEveryNth, self.animateEveryNth, self.animationTimeStep)
 
-    def energyConservation(self, filename):
+    def energyConservationSolarSystem(self, filename):
         self.readInfo(filename)
+
+        sun = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/sun')
+        mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mercury')
+        venus = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/venus')
+        earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
+        mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
+
+        systemOfBodies = [sun, mercury, venus, earth, mars]
+        energyData = []
+        for i in range(900,1000):
+            delta_t = i*100.
+            system = AnimatedSystem(systemOfBodies, delta_t)
+            system.iterateTimeInterval(self.timeInterval)
+            minEnergy, maxEnergy = system.mimMaxSystemEnergy()
+            energyDataElement = [delta_t, minEnergy, maxEnergy]
+            energyData.append(energyDataElement)
+
+        fileout = open('experiments/innerSolarSystem/outputData/minMaxEnergyData.dat', 'w')
+        for data in energyData:
+            fileout.write(str(data[0]) + "\t" + str(data[1]) + "\t" + str(data[2]) + "\n" )
+        fileout.close()
+
+
+
+
+
 
     def meteorRisk(self, filename):
         self.readInfo(filename)
