@@ -3,6 +3,7 @@ class that initialises Bodies and Systems and calls System methods to do useful 
 '''
 from Body import Body
 from Satelite import Satelite
+from Meteor import Meteor
 from AnimatedSystem import AnimatedSystem
 import numpy as np
 
@@ -36,11 +37,11 @@ class Experiment(object):
     def innerSystem(self, filename):
         self.readInfo(filename)
 
-        sun = Body(True, 'experiments/innerSolarSystem/infoFiles/sun')
-        mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/mercury')
-        venus = Body(True, 'experiments/innerSolarSystem/infoFiles/venus')
-        earth = Body(True, 'experiments/innerSolarSystem/infoFiles/earth')
-        mars = Body(True, 'experiments/innerSolarSystem/infoFiles/mars')
+        sun = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/sun')
+        mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mercury')
+        venus = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/venus')
+        earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
+        mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
 
         innerBodies = [sun, mercury, venus, earth, mars]
         innerSystem = AnimatedSystem(innerBodies, self.delta_t)
@@ -58,6 +59,37 @@ class Experiment(object):
 
     def energyConservation(self, filename):
         self.readInfo(filename)
+
+    def meteorRisk(self, filename):
+        self.readInfo(filename)
+
+        sun = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/sun')
+        mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mercury')
+        venus = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/venus')
+        earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
+        mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
+
+        LeastSepToEarth = []
+        meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
+        meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
+        meteorSystem.iterateTimeInterval(self.timeInterval)
+        meteorSystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
+        '''
+        for i in range(100):
+
+            meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
+            meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
+            meteorSystem.iterateTimeInterval(self.timeInterval)
+            closestDisp, time = meteorSystem.closestApproach([3,5])
+            closestDist = np.linalg.norm(closestDisp)
+            LeastSepToEarth.append(closestDist)
+
+            print("\n" + str(i) + "\n")
+        '''
+        fileout = open('experiments/innerSolarSystem/outputData/meteorClosestApproach.dat', 'w')
+        for data in LeastSepToEarth:
+            fileout.write(str(data) + "\n")
+        fileout.close()
 
     def sateliteToJupiter(self, filename):
         self.readInfo(filename)

@@ -1,0 +1,15 @@
+#describes a random velocity, random position meteor just entering the
+#inner solar system
+#values informed by
+#http://www.spacedaily.com/reports/Protecting_Earth_Against_Asteroids_999.html
+#https://www.nasa.gov/mission_pages/asteroids/overview/fastfacts.html
+#big mass because i'm only including objects diameter>25m (how big it
+#needs to be to be a bother)
+Name: Meteor
+Entrance Radius: 2.5E+11
+Mass Mean: 1E9
+Mass std. Deviation: 1E8
+Speed Mean: 30000
+Speed std. Deviation: 5000
+Animation Radius: 1.5E+9
+Colour: k
