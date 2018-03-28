@@ -11,6 +11,6 @@ def main():
     #experimenter.testWrite()
     #experimenter.testRead()
     #experimenter.innerSystem('experiments/innerSolarSystem/infoFiles/experimentInfo/calcYearLen')
-    #experimenter.sateliteToMars('experiments/innerSolarSystem/infoFiles/experimentInfo/marsSatelite')
-    experimenter.sateliteToJupiter('experiments/innerSolarSystem/infoFiles/experimentInfo/jupiterSatelite')
+    experimenter.sateliteToMars('experiments/innerSolarSystem/infoFiles/experimentInfo/marsSatelite')
+    #experimenter.sateliteToJupiter('experiments/innerSolarSystem/infoFiles/experimentInfo/jupiterSatelite')
 main()

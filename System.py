@@ -3,7 +3,7 @@ looks after a system of Bodies by calculating
 the total force on each body and then using that info
 to update each bodies position and Velocity using the
 Beeman integration schemeself.
-Any useful past info on a Body in the simulation is 
+Any useful past info on a Body in the simulation is
 accessed through methods here.
 '''
 from Calculate import Calculate as calc
@@ -118,7 +118,7 @@ class System(object):
         return minDisplacement, closestAprproachTime
 
     #pretty prints past parameters of the system in system.pastSysStates[iterationsOfInterest[i]]
-    #bodiesOfInterest is what bodies we want to get info on
+    #bodiesOfInterest is what bodies we want to get info on (-1 corresponds to whole system)
     #parametersOfInterest is what parameters we want to get info on
     def printInfoToFile(self, filename, iterationsOfInterest, bodiesOfInterest, parametersOfInterest):
         fileout = open(filename, 'w')
@@ -131,6 +131,34 @@ class System(object):
             fileout.write("======================\n")
             #always prints time
             fileout.write("Time: " + str(self.pastTimes[i]) + " \n----")
+            if -1 in bodiesOfInterest:
+                fileout.write("\n+++System Info+++\n")
+                #total system KE
+                if -1 in parametersOfInterest:
+                    runningTotalKE = 0.
+                    for body in self.pastSysStates[i]:
+                        runningTotalKE += (0.5 * body.mass * (np.linalg.norm(body.vel))**2.)
+                    fileout.write("Total system KE: " + str(runningTotalKE) + "\n")
+
+                #total system PE
+                if -2 in parametersOfInterest:
+                    runningTotalPE = 0.
+                    for body in self.pastSysStates[i]:
+                        runningTotalPE += body.pot
+                    #divide by 2 because of double counting of potential
+                    fileout.write("Total system PE: " + str(runningTotalPE/2.) + "\n")
+
+                #total system Energy
+                if -3 in parametersOfInterest:
+                    runningTotalKE = 0.
+                    runningTotalPE = 0.
+                    for body in self.pastSysStates[i]:
+                        runningTotalKE += (0.5 * body.mass * (np.linalg.norm(body.vel))**2.)
+                        runningTotalPE += body.pot
+                    fileout.write("Total system Energy: " + str(runningTotalKE + runningTotalPE/2.) + "\n")
+                fileout.write("+++++++++++++++++\n")
+
+            #loops over bodies in that past state
             for j in range(len(self.pastSysStates[i])):
                 if j in bodiesOfInterest:
                     fileout.write("\n")

@@ -103,7 +103,7 @@ class Experiment(object):
         print("Phi: " + str(initSatState.phi))
         print("")
         '''
-        innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteInfo.dat', 0., self.timeInterval, 1000., [5], [0,6,7,8])
+        innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteInfo.dat', 0., self.timeInterval, 1000., [-1], [-1,-2,-3])
 
         print(closestSatMarsDisp)
         print(np.linalg.norm(closestSatMarsDisp))

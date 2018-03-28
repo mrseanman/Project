@@ -1,6 +1,6 @@
 #
 #
-Delta_t: 100.
+Delta_t: 1000.
 timeInterval: 2.15E07
 animationTimeStep: 40.
 animateEveryNth: 5
