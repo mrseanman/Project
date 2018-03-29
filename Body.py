@@ -18,6 +18,13 @@ class Body(object):
 
         self.prevAcc = self.acc
 
+    #retruns unsigned angle from origin in the usual convention
+    def angle(self):
+        angle = np.arctan2(self.pos[1], self.pos[0])
+        if angle < 0.:
+            angle = 2.*np.pi + angle
+        return angle
+
     #reads in initial info for a body
     def readInfo(self, filename):
         filein = open(filename, "r")

@@ -87,6 +87,27 @@ class System(object):
         numIter = int(round((float(timeInterval)/self.delta_t)))
         self.iterateSystemMany(numIter)
 
+    #retruns bool wether planets are aligned in currSysState
+    def planetsAligned(self):
+        angleError = 12. * np.pi/180.
+        runningSumAngle = 0.
+        for body in self.currSysState:
+            if not(body.name == 'Sun'):
+                runningSumAngle += body.angle()
+        #-1 because we are not including the sun
+        averageAngle = runningSumAngle / float(len(self.currSysState)-1.)
+
+        aligned = True
+
+        for body in self.currSysState:
+            difference = np.absolute(body.angle() - averageAngle)
+            #print("low: " + str(angleError) + "\thigh" + str(2*np.pi - angleError) )
+            if aligned and (difference > angleError and difference < 2.*np.pi - angleError):
+                #print("yo")
+                aligned = False
+
+        return aligned
+
     #calculates min and max of system total energy to learn about energy conservation
     #i.e. energy should be constant
     def mimMaxSystemEnergy(self):

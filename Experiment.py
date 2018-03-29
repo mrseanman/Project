@@ -6,6 +6,7 @@ from Satelite import Satelite
 from Meteor import Meteor
 from AnimatedSystem import AnimatedSystem
 import numpy as np
+import sys
 
 class Experiment(object):
 
@@ -100,6 +101,9 @@ class Experiment(object):
         meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
         meteorSystem.iterateTimeInterval(self.timeInterval)
         meteorSystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
+        closestDisp, time = meteorSystem.closestApproach([3,5])
+        closestDist = np.linalg.norm(closestDisp)
+        print(closestDist)
         '''
         for i in range(100):
 
@@ -117,12 +121,39 @@ class Experiment(object):
             fileout.write(str(data) + "\n")
         fileout.close()
 
-    def sateliteToJupiter(self, filename):
+    def planetAlignment(self, filename):
         self.readInfo(filename)
 
         sun = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/sun')
         mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mercury')
         venus = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/venus')
+        earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
+        mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
+
+        system = AnimatedSystem([sun, mercury, venus, earth, mars], self.delta_t)
+
+        aligned = system.planetsAligned()
+        numIterToTry = 1000000
+        i = 0
+        print("Checking alignment")
+        while i< numIterToTry and not(aligned):
+            sys.stdout.write("\r" + str(100*i/numIterToTry)[0:3] + "%")
+            system.updateSystemFull()
+
+            aligned = system.planetsAligned()
+
+            sys.stdout.flush()
+            i+=1
+        print("\n")
+        print(str(self.delta_t*i))
+
+        system.animateEveryNth(0.98*self.delta_t*i, self.delta_t*i, self.animateEveryNth, self.animationTimeStep)
+    def sateliteToJupiter(self, filename):
+        self.readInfo(filename)
+
+        sun = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/sun')
+        mercury = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mercury')
+        venus = Body(True, 'experiments/innerSolarSystem/insystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)foFiles/bodyInfo/venus')
         earth = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/earth')
         mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
         jupiter = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/jupiter')

@@ -14,5 +14,6 @@ def main():
     #experimenter.sateliteToMars('experiments/innerSolarSystem/infoFiles/experimentInfo/marsSatelite')
     #experimenter.sateliteToJupiter('experiments/innerSolarSystem/infoFiles/experimentInfo/jupiterSatelite')
     #experimenter.meteorRisk('experiments/innerSolarSystem/infoFiles/experimentInfo/meteorRisk')
-    experimenter.energyConservationSolarSystem('experiments/innerSolarSystem/infoFiles/experimentInfo/energyConservation')
+    #experimenter.energyConservationSolarSystem('experiments/innerSolarSystem/infoFiles/experimentInfo/energyConservation')
+    experimenter.planetAlignment('experiments/innerSolarSystem/infoFiles/experimentInfo/planetAlignment')
 main()

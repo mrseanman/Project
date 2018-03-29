@@ -10,11 +10,13 @@ class Meteor(Body):
         self.readMeteorInfo(meteorFilename)
         self.mass = np.random.normal(self.massMean, self.massDev)
         velocity = np.random.normal(self.velMean, self.velDev)
+        zPlane = np.random.normal(0., self.zDev)
         #where on the outer perimeter of the inner solar system it enters
         posAngleOfEntry = 2.* np.pi * np.random.random()
         velAngleOfEntry = posAngleOfEntry + np.pi *(0.5+np.random.random())
 
-        self.pos = self.entranceRad * np.array([np.sin(posAngleOfEntry), np.cos(posAngleOfEntry), 0.])
+        #divideing by entranceRad because z position does not scale with radius
+        self.pos = self.entranceRad * np.array([np.sin(posAngleOfEntry), np.cos(posAngleOfEntry), zPlane/self.entranceRad])
         self.vel = velocity * np.array([np.sin(velAngleOfEntry), np.cos(velAngleOfEntry), 0.])
 
         self.force = np.zeros(self.pos.size, dtype=float)
@@ -43,16 +45,18 @@ class Meteor(Body):
             elif i == 1:
                 self.entranceRad = float(data)
             elif i == 2:
-                self.massMean = float(data)
+                self.zDev = float(data)
             elif i == 3:
-                self.massDev = float(data)
+                self.massMean = float(data)
             elif i == 4:
-                self.velMean = float(data)
+                self.massDev = float(data)
             elif i == 5:
-                self.velDev = float(data)
+                self.velMean = float(data)
             elif i == 6:
-                self.radius = float(data)
+                self.velDev = float(data)
             elif i == 7:
+                self.radius = float(data)
+            elif i == 8:
                 self.colour = str(data)
 
         filein.close()

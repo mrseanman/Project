@@ -7,6 +7,7 @@
 #needs to be to be a bother)
 Name: Meteor
 Entrance Radius: 2.5E+11
+Z std. Deviation: 1E+09
 Mass Mean: 1E9
 Mass std. Deviation: 1E8
 Speed Mean: 30000
