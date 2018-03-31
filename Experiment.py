@@ -7,6 +7,7 @@ from Meteor import Meteor
 from AnimatedSystem import AnimatedSystem
 import numpy as np
 import sys
+import copy
 
 class Experiment(object):
 
@@ -58,6 +59,7 @@ class Experiment(object):
 
         innerSystem.animateEveryNth(self.animateEveryNth, self.animateEveryNth, self.animationTimeStep)
 
+
     def energyConservationSolarSystem(self, filename):
         self.readInfo(filename)
 
@@ -69,9 +71,10 @@ class Experiment(object):
 
         systemOfBodies = [sun, mercury, venus, earth, mars]
         energyData = []
-        for i in range(900,1000):
-            delta_t = i*100.
-            system = AnimatedSystem(systemOfBodies, delta_t)
+
+        for i in range(990,1000):
+            delta_t = i*1000.
+            system = AnimatedSystem(copy.deepcopy(systemOfBodies), delta_t)
             system.iterateTimeInterval(self.timeInterval)
             minEnergy, maxEnergy = system.mimMaxSystemEnergy()
             energyDataElement = [delta_t, minEnergy, maxEnergy]
