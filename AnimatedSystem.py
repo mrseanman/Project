@@ -86,5 +86,5 @@ class AnimatedSystem(System):
         totalToAnimate = int(round((endTime-startTime)//(everyNth*self.delta_t)))
         for i in range(totalToAnimate):
             iterationsToAnimate.append(startIteration + i*everyNth)
-            
+
         self.animateSystem(iterationsToAnimate, animationTimeStep)

@@ -1,6 +1,6 @@
 #
 #
-Delta_t: 10000.
+Delta_t: 5000.
 timeInterval: 3E7
 animationTimeStep: 40.
 animateEveryNth: 30

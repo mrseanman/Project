@@ -86,10 +86,6 @@ class Experiment(object):
         fileout.close()
 
 
-
-
-
-
     def meteorRisk(self, filename):
         self.readInfo(filename)
 
@@ -100,6 +96,7 @@ class Experiment(object):
         mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
 
         LeastSepToEarth = []
+        '''
         meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
         meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
         meteorSystem.iterateTimeInterval(self.timeInterval)
@@ -108,17 +105,18 @@ class Experiment(object):
         closestDist = np.linalg.norm(closestDisp)
         print(closestDist)
         '''
+
         for i in range(100):
 
             meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
-            meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
+            meteorSystem = AnimatedSystem(copy.deepcopy([sun, mercury, venus, earth, mars, meteor]), self.delta_t)
             meteorSystem.iterateTimeInterval(self.timeInterval)
             closestDisp, time = meteorSystem.closestApproach([3,5])
             closestDist = np.linalg.norm(closestDisp)
             LeastSepToEarth.append(closestDist)
 
             print("\n" + str(i) + "\n")
-        '''
+
         fileout = open('experiments/innerSolarSystem/outputData/meteorClosestApproach.dat', 'w')
         for data in LeastSepToEarth:
             fileout.write(str(data) + "\n")
@@ -195,7 +193,7 @@ class Experiment(object):
         print("Phi: " + str(initSatState.phi))
         print("")
         '''
-        innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteInfo.dat', 0., self.timeInterval, 1000., [-1], [-1,-2,-3])
+        #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteInfo.dat', 0., self.timeInterval, 1000., [-1], [-1,-2,-3])
 
         print(closestSatMarsDisp)
         print(np.linalg.norm(closestSatMarsDisp))
@@ -203,7 +201,8 @@ class Experiment(object):
         print("")
         #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/data/sateliteInfo.dat', 0, self.timeInterval, self.delta_t, [3,5], [0,1,2])
 
-        innerSystem.animateEveryNth(closestAprproachTime-self.timeInterval/60, closestAprproachTime+self.timeInterval/60, self.animateEveryNth, self.animationTimeStep)
+        innerSystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
+        #innerSystem.animateEveryNth(closestAprproachTime-self.timeInterval/60, closestAprproachTime+self.timeInterval/60, self.animateEveryNth, self.animationTimeStep)
 
     def simpleOrbit(self):
         delta_t = 0.001
