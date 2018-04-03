@@ -1,4 +1,0 @@
-Methods:
-  __init__:
-    if readFromFile then reads the info at destination filename
-    and creates a new Body object

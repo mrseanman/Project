@@ -1,6 +1,6 @@
 #
 #
 Delta_t: 1600.
-timeInterval: 3.2E+07
+timeInterval: 6.4E+07
 animationTimeStep: 50.
-animateEveryNth: 3
+animateEveryNth: 40

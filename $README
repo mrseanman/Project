@@ -1,0 +1,62 @@
+All relevant infoFiles and experiment data for the project is stored in
+experiments/innerSolarSystem.
+
+
+For files describing initial conditions of bodies:
+  experiments/innerSolarSystem/infoFiles/bodyInfo
+
+For files describing experiment parameters:
+  experiments/innerSolarSystem/infoFiles/experimentInfo
+
+
+
+
+Which experiment is run is decided by appropriately (un)commenting
+lines in main.py
+
+  To spit out orbital periods and show a basic animation of inner planets:
+    uncheck main.py line 13 "experimenter.innerSystem"
+
+    file showing energy conservation is found in:
+    experiments/innerSolarSystem/outputData/innerSystemEnergyConservation.dat
+
+    file showing off general format of output data is found in:
+    experiments/innerSolarSystem/outputData/innerBodyData1.dat
+
+
+  To run mars satellite simulation:
+    uncheck main.py line 14 "experimenter.satelliteToMars"
+
+    This also spits out the closest approach to Mars.
+    Note that the closest approach is not what I stated in the report!
+    This is because I have set delta_t = 3000 (so it runs quickly)
+    You can edit this by changing the file:
+    experiments/innerSolarSystem/experimentInfo/marsSatelite and setting
+    delta_t: 50
+
+    You will also need to set
+    animateEveryNth: 1800
+
+    So the animation isn't super slow
+
+
+  To see a random meteor animation and and for its closest approach to Earth:
+    uncheck main.py line 16 "experimenter.meteorRisk"
+
+    The meteor is black
+
+    Note that the code used to calculate the approach of many meteors is
+    commented out becuase that takes ages to run and isnt very exciting.
+
+
+
+
+
+If you want to see an animation of x-z plane instead of x-y, change
+AnimatedSystem.py line 42 from:
+
+ypos = self.pastSysStates[frame][bodyIndex].pos[1]
+to
+ypos = self.pastSysStates[frame][bodyIndex].pos[2]
+
+(especially interesting for mars satellite)

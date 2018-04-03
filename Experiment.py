@@ -49,15 +49,17 @@ class Experiment(object):
         innerSystem = AnimatedSystem(innerBodies, self.delta_t)
 
         innerSystem.iterateTimeInterval(self.timeInterval)
+        print("Orbital period [Earth days]: ")
         #prints the number of earth days in an average orbit
-        print(0.000072722/innerSystem.averageAngVel(1))
-        print(0.000072722/innerSystem.averageAngVel(2))
-        print(0.000072722/innerSystem.averageAngVel(3))
-        print(0.000072722/innerSystem.averageAngVel(4))
-        #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/data/innerBodyData1.dat', 0, timeInterval, delta_t, [0,1,2,3,4], [0,1,6,7,8])
-        #innerSystem.animateTimeInterval(0., timeInterval, timewarp, jumpFrames)
+        print("Mercury: " + str(0.000072722/innerSystem.averageAngVel(1)))
+        print("Venus: " + str(0.000072722/innerSystem.averageAngVel(2)))
+        print("Earth: " + str(0.000072722/innerSystem.averageAngVel(3)))
+        print("Mars: " + str(0.000072722/innerSystem.averageAngVel(4)))
+        print("")
 
-        innerSystem.animateEveryNth(self.animateEveryNth, self.animateEveryNth, self.animationTimeStep)
+        #shows that energy is conserved
+        innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/innerSystemEnergyConservation.dat', 0., self.timeInterval, 1000, [-1], [-1,-2,-3])
+        innerSystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
 
 
     def energyConservationSolarSystem(self, filename):
@@ -96,16 +98,16 @@ class Experiment(object):
         mars = Body(True, 'experiments/innerSolarSystem/infoFiles/bodyInfo/mars')
 
         LeastSepToEarth = []
-        '''
+
         meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
         meteorSystem = AnimatedSystem([sun, mercury, venus, earth, mars, meteor], self.delta_t)
         meteorSystem.iterateTimeInterval(self.timeInterval)
         meteorSystem.animateEveryNth(0., self.timeInterval, self.animateEveryNth, self.animationTimeStep)
         closestDisp, time = meteorSystem.closestApproach([3,5])
         closestDist = np.linalg.norm(closestDisp)
-        print(closestDist)
-        '''
+        print("Closest approach to Earth: " + str(closestDist))
 
+        '''
         for i in range(10000):
 
             meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
@@ -117,10 +119,12 @@ class Experiment(object):
 
             print("\n" + str(i) + "\n")
 
+
         fileout = open('experiments/innerSolarSystem/outputData/meteorClosestApproach.dat', 'w')
         for data in LeastSepToEarth:
             fileout.write(str(data) + "\n")
         fileout.close()
+        '''
 
     def planetAlignment(self, filename):
         self.readInfo(filename)
@@ -149,6 +153,7 @@ class Experiment(object):
         print(str(self.delta_t*i))
 
         system.animateEveryNth(0.98*self.delta_t*i, self.delta_t*i, self.animateEveryNth, self.animationTimeStep)
+
     def sateliteToJupiter(self, filename):
         self.readInfo(filename)
 
@@ -186,18 +191,12 @@ class Experiment(object):
         innerSystem.iterateTimeInterval(self.timeInterval)
         closestSatMarsDisp, closestAprproachTime = innerSystem.closestApproach([5,4])
 
-        '''
-        initSatState = innerSystem.pastSysStates[0][5]
-        print("Initial speed: " + str(initSatState.initialSpeed))
-        print("Theta: " + str(initSatState.theta))
-        print("Phi: " + str(initSatState.phi))
-        print("")
-        '''
-        #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteInfo.dat', 0., self.timeInterval, 1000., [-1], [-1,-2,-3])
 
-        print(closestSatMarsDisp)
-        print(np.linalg.norm(closestSatMarsDisp))
-        print(closestAprproachTime)
+        #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/outputData/sateliteEnergy.dat', 0., self.timeInterval, 1000., [-1], [-1,-2,-3])
+
+        print("Closest approach displacement: " + str(closestSatMarsDisp))
+        print("Closest approach distance: " + str(np.linalg.norm(closestSatMarsDisp)))
+        print("Closest approach time: " + str(closestAprproachTime))
         print("")
         #innerSystem.printInfoTimeInterval('experiments/innerSolarSystem/data/sateliteInfo.dat', 0, self.timeInterval, self.delta_t, [3,5], [0,1,2])
 
