@@ -106,7 +106,7 @@ class Experiment(object):
         print(closestDist)
         '''
 
-        for i in range(1000):
+        for i in range(10000):
 
             meteor = Meteor('experiments/innerSolarSystem/infoFiles/bodyInfo/meteor')
             meteorSystem = AnimatedSystem(copy.deepcopy([sun, mercury, venus, earth, mars, meteor]), self.delta_t)
